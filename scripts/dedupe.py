@@ -6,7 +6,7 @@ def main():
     """Dedupe rows in fortunes.csv based on fortune.
     """
     with tempfile.NamedTemporaryFile("r+", newline="") as tempf:
-        writer = csv.writer(tempf)
+        writer = csv.writer(tempf, dialect="unix")
 
         # Go through fortunes and dedupe rows based on fortune
         with open("fortunes.csv", "r", newline="") as rf:
